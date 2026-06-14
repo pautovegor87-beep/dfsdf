@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --ivory: #fcfaf6;
+  --ink: #312a21;
+  --ink-muted: #7e7061;
+  --gold-soft: #e7dcc8;
+  --gold-deep: #b28a52;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--ivory);
+}
+
+.font-script {
+  font-family: "Great Vibes", cursive;
+}
+
+.font-serif {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+}
+
+.card-shell {
+  border: 1px solid color-mix(in oklab, var(--gold-soft) 80%, white 20%);
+  border-radius: 1.4rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 253, 249, 0.9));
+  box-shadow: 0 14px 36px rgba(178, 138, 82, 0.08);
+}
+
+.section-kicker {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-muted);
+}
+
+.section-title {
+  margin-top: 0.4rem;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.section-copy {
+  margin-top: 0.7rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+.gold-line {
+  background: linear-gradient(90deg, rgba(178, 138, 82, 0), rgba(178, 138, 82, 0.9), rgba(178, 138, 82, 0));
+}
+
+.soft-brush {
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 35%, rgba(241, 226, 203, 0.8), rgba(255, 255, 255, 0));
+}
+
+.shimmer-gold {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, rgba(241, 229, 206, 0.5), rgba(255, 255, 255, 0.84), rgba(244, 229, 199, 0.5));
+}
+
+.shimmer-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-120%);
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0));
+  animation: shimmer 3.4s ease-in-out infinite;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fade-up 0.85s cubic-bezier(0.21, 0.9, 0.31, 1) forwards;
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  60%,
+  100% {
+    transform: translateX(120%);
+  }
+}
